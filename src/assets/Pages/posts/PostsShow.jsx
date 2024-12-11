@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { BASE_URI } from "../../../config";
 import placeHolderImg from "../../../../src/place-holder.jpg";
+import DeletePosts from "../../Componentss/Button/DeletedPost";
 
 export default function Show() {
 
@@ -54,6 +55,7 @@ export default function Show() {
                     <div>
                         <p>{post.description}</p>
                     </div>
+                    {post && <DeletePosts onDelete={() => { navigate('/blog') }} id={post.id} />}
                 </section>
 
 

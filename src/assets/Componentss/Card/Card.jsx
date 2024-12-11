@@ -2,10 +2,13 @@ import style from './Card.module.css'
 import { BASE_URI } from '../../../config'
 import placeHolderImg from '../../../../src/place-holder.jpg'
 import { Link } from 'react-router-dom'
+import DeletePosts from '../Button/DeletedPost'
+import { useNavigate } from 'react-router-dom'
 
 export default function Card({ posts = {} }) {
     const { description, id, name, published, quality, tag = [], thumb, tier } = posts
 
+    const navigation = useNavigate()
     return (
         <>
             <div className={style.card}>
@@ -21,10 +24,10 @@ export default function Card({ posts = {} }) {
                     <div>{quality}</div>
                     <div>{description}</div>
                     <div className={style.buttonsCard}>
-                        <button>Save</button>
-                        <button>Elimina</button>
+                        <Link to={`posts/${id}`}>See more</Link>
+                        <DeletePosts id={id} onDelete={() => { }} />
                     </div>
-                    <Link  to={`posts/${id}`}>See more</Link>
+
                 </div>
             </div>
 
