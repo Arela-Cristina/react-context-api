@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
+import PostsContext from "./Context/globalContext.jsx"
 import DefaultLayout from "./assets/Layouts/DefaultLayout.jsx"
 import Home from "./assets/Pages/Home-Page.jsx"
 import About from "./assets/Pages/About-Us.jsx"
@@ -9,8 +10,10 @@ import Create from "./assets/Pages/posts/PostCreate.jsx"
 import './App.css'
 
 function App() {
+
   return (
-    <>
+
+    <PostsContext.Provider value={'post'}>
       <BrowserRouter>
         <Routes>
           {/* Header & Footer are here */}
@@ -21,9 +24,9 @@ function App() {
 
             {/* ruta API */}
             <Route path="/blog">
-              <Route index element={<Index />} /> 
+              <Route index element={<Index />} />
               <Route path='posts/:id' element={<Show />} />
-              <Route path="create" element={<Create />} /> 
+              <Route path="create" element={<Create />} />
             </Route>
 
             {/* <Route path="*" element={<div>404 :v</div>} /> */}
@@ -31,7 +34,8 @@ function App() {
 
         </Routes >
       </BrowserRouter>
-    </>
+    </PostsContext.Provider>
+
   )
 }
 
