@@ -46,13 +46,16 @@ export default function Show() {
                 <figure>
                     <img src={post.published ? `${BASE_URI}images/${post.thumb}` : placeHolderImg} alt={post.name} />
                 </figure>
-                <div>
-                    <h1>{post.name}</h1>
+                <section>
+                    <div>
+                        <h1>{post.name}</h1>
 
-                </div>
-                <div>
-                    <p>{post.description}</p>
-                </div>
+                    </div>
+                    <div>
+                        <p>{post.description}</p>
+                    </div>
+                </section>
+
 
 
             </section>
