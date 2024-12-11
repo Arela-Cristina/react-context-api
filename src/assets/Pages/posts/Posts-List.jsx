@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import PostsContext from "../../../Context/globalContext";
 import TagsContext from "../../../Context/tagContext";
 import style from "./Posts-List.module.css"
@@ -32,7 +33,7 @@ export default function Posts() {
                             <li>{tag}</li>
                         ))}
                     </ul>
-
+                    <Link to="/blog/create">Create Brawler</Link>
                     <div className={style.cardContainer}>
                         <ul>
                             {posts.map(posts => (
