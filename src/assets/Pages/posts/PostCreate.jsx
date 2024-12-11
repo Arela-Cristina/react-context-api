@@ -70,7 +70,7 @@ export default function PostCreate() {
                     published: false
                 });
 
-                navigate('/blog')
+                navigate(`/blog/posts/${newData.id}`)
             })
             .catch(err => {
                 console.error(err);
