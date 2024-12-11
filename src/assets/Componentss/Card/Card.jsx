@@ -3,8 +3,8 @@ import { BASE_URI } from '../../../config'
 import placeHolderImg from '../../../../src/place-holder.jpg'
 import { Link } from 'react-router-dom'
 
-export default function Card({ post = {} }) {
-    const { description, id, name, published, quality, tag = [], thumb, tier } = post
+export default function Card({ posts = {} }) {
+    const { description, id, name, published, quality, tag = [], thumb, tier } = posts
 
     return (
         <>
@@ -15,7 +15,7 @@ export default function Card({ post = {} }) {
                 <div className={style.bodyCard}>
                     <div>{name}</div>
                     <ul>
-                        {post.tag.map((tag, index) => <li key={index}>{tag}</li>)}
+                        {posts.tag.map((tag, index) => <li key={index}>{tag}</li>)}
                     </ul>
                     <div>{tier}</div>
                     <div>{quality}</div>
