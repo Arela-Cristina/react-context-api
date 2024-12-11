@@ -1,4 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { useState } from "react"
+import { BASE_URI } from "./config.js"
+import axios from "axios"
 import PostsContext from "./Context/globalContext.jsx"
 import DefaultLayout from "./assets/Layouts/DefaultLayout.jsx"
 import Home from "./assets/Pages/Home-Page.jsx"
@@ -11,9 +14,24 @@ import './App.css'
 
 function App() {
 
+  const [posts, setPosts] = useState([]) //variabile stato - array 
+  //chiamata Axios
+  function fetchPosts() {
+    axios.get(`${BASE_URI}posts`)
+      .then(res => {
+        setPosts(res.data)
+        // console.log('data base', res.data)
+        console.log(PostsContext)
+      })
+      .catch(err => {
+        console.error(err)
+      })
+  }
+
   return (
 
-    <PostsContext.Provider value={'post'}>
+    <PostsContext.Provider value={{posts, fetchPosts}}>
+
       <BrowserRouter>
         <Routes>
           {/* Header & Footer are here */}
@@ -34,7 +52,7 @@ function App() {
 
         </Routes >
       </BrowserRouter>
-    </PostsContext.Provider>
+    </PostsContext.Provider >
 
   )
 }
