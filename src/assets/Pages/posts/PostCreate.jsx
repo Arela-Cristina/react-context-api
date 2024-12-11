@@ -45,6 +45,8 @@ export default function PostCreate() {
         }
     }
 
+    const navigate = useNavigate()
+
     //FUNZIONE EPR SALVARE IL POST
     function savePost(e) {
         e.preventDefault();
@@ -68,6 +70,7 @@ export default function PostCreate() {
                     published: false
                 });
 
+                navigate('/blog')
             })
             .catch(err => {
                 console.error(err);
