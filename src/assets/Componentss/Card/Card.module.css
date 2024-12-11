@@ -1,0 +1,37 @@
+.card {
+    /* debug */
+    display: flex;
+    background: azure;
+    border-radius: 10px;
+}
+
+.containerImg {
+    width: 14rem;
+ 
+}
+
+.image {
+    background-color: yellow;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    aspect-ratio: 16 / 9; /* Relación de aspecto 16:9 */
+    object-fit: cover; 
+}
+
+.bodyCard {
+    padding: 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    /* width */
+    width: 16rem;
+}
+
+.buttonsCard {
+    display: flex;
+    gap: 5rem;
+    justify-content: space-between;
+}

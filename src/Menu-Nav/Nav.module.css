@@ -1,0 +1,18 @@
+.menu {
+    display: flex;
+    justify-content: flex-start;
+    gap: 3rem;
+    list-style: none;
+    width: 35%;
+    margin: 0 auto;
+    /* debug */
+    background-color: pink;
+}
+
+a{
+    text-decoration: none;
+}
+
+a.active {
+    color: blue;
+}

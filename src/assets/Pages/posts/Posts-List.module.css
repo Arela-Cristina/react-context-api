@@ -1,0 +1,22 @@
+.title {
+    text-align: center;
+}
+
+.cardContainer {
+    /* debug */
+    background-color: pink;
+    padding: 1rem 1rem;
+}
+
+
+ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+li {
+    list-style: none;
+    padding: 1rem 1rem;
+}
