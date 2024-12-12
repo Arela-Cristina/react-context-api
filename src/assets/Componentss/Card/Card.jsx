@@ -3,12 +3,20 @@ import { BASE_URI } from '../../../config'
 import placeHolderImg from '../../../../src/place-holder.jpg'
 import { Link } from 'react-router-dom'
 import DeletePosts from '../Button/DeletedPost'
-import { useNavigate } from 'react-router-dom'
+// import PostsContext from '../../../Context/globalContext'
+// import { useEffect, useContext } from 'react'
+
+
 
 export default function Card({ posts = {} }) {
     const { description, id, name, published, quality, tag = [], thumb, tier } = posts
 
-    const navigation = useNavigate()
+    // const { posts, fetchPosts } = useContext(PostsContext)
+
+    // useEffect(() => {
+    //     fetchPosts()
+    // }, [])
+
     return (
         <>
             <div className={style.card}>
@@ -25,7 +33,7 @@ export default function Card({ posts = {} }) {
                     <div>{description}</div>
                     <div className={style.buttonsCard}>
                         <Link to={`posts/${id}`}>See more</Link>
-                        <DeletePosts id={id} onDelete={() => { }} />
+                        <DeletePosts id={id} />
                     </div>
 
                 </div>
